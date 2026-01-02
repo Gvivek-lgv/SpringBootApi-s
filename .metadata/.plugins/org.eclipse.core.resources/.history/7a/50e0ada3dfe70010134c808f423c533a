@@ -1,0 +1,10 @@
+package com.ibm.springbootrequestparam;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Employeecontroller {
+	
+	
+
+}

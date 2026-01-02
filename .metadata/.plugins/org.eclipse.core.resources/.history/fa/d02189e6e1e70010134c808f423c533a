@@ -1,0 +1,38 @@
+package com.ibm.springbootrequestparam;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Employeecontroller {
+	
+	@GetMapping("/Employee")
+	public String getEmployee(@RequestParam int id,@RequestParam String name) {
+		return "Id is  "  +  id  +"Name is   " + name ;
+	}
+	
+	
+	@GetMapping("/Employee")
+	public String getEmpbyHeader(@RequestHeader int id, String name) {
+		return "Id of the header emp is "+id+ "Name of the header emp is "+name;
+	}
+	
+	
+	
+	@PostMapping("/Saveemp")
+	public String saveEmployee(@RequestBody Employee emp) {
+		return  emp.toString();
+	}
+	
+	
+	@GetMapping("/Employee/{id}/{name}")
+	public String getEmpbypathvar(@PathVariable int id, @PathVariable String name) {
+		return "Id of the pathvar Emp is "+id +"Name of path var emp is "+name;
+	}
+
+}
