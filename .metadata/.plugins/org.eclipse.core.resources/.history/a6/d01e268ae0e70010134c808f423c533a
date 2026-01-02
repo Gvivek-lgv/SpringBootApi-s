@@ -1,0 +1,15 @@
+package com.ibm.springbootrequestparam;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Employeecontroller {
+	
+	@GetMapping("/Employee")
+	public String getEmployee(@RequestParam int id,@RequestParam String name) {
+		return "Id is" + id +"Name is " + name ;
+	}
+
+}
